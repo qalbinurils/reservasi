@@ -15,7 +15,7 @@ class HomestayController extends Controller
     public function index()
     {
         $homestay = Homestay::all();
-        return view('homestays.index', compact('homestay'));
+        return view('index', compact('homestay'));
     }
 
     /**
@@ -25,7 +25,7 @@ class HomestayController extends Controller
      */
     public function create()
     {
-        return view('homestays.create');
+        return view('create');
     }
 
     /**
@@ -42,7 +42,7 @@ class HomestayController extends Controller
         $homestay->description = $request->input('description');
         $homestay->price = $request->input('harga');
         $homestay->save();
-        return redirect(route('homestays.index'));
+        return redirect(route('index'));
     }
 
     /**
@@ -53,7 +53,7 @@ class HomestayController extends Controller
      */
     public function show(Homestay $homestay)
     {
-        return view('homestays.show', compact('homestay'));
+        return view('show', compact('homestay'));
     }
 
     /**
@@ -64,7 +64,7 @@ class HomestayController extends Controller
      */
     public function edit(Homestay $homestay)
     {
-        return view('homestays.edit', compact('homestay'));
+        return view('edit', compact('homestay'));
     }
 
     /**
@@ -82,7 +82,7 @@ class HomestayController extends Controller
         $homestays->description = $request->input('description');
         $homestays->price = $request->input('harga');
         $homestays->save();
-        return redirect(route('homestays.index'));
+        return redirect(route('index'));
     }
 
     /**

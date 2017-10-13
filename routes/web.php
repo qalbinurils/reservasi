@@ -12,6 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('homestays.create');
+    return view('welcome');
 });
-Route::resource('homestays','HomestaysController');
+Route::group(["middleware" => "auth"], function (){
+    Route::resource('homestays','HomestayController');
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

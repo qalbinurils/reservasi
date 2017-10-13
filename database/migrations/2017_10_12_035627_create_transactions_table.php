@@ -13,7 +13,7 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::enableForeignKeyConstraints();
+//        Schema::enableForeignKeyConstraints();
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_homestay')->usigned();
@@ -23,7 +23,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('total_harga');
             $table->timestamps();
 
-            $table->foreign('id_homestay')->references('id')->on('homestays')->onDelete('cascade');
+//            $table->foreign('id_homestay')->references('id')->on('homestays')->onDelete('cascade');
 //            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
         });
